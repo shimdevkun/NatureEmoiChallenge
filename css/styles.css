@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+:root {
+	--white: #fff;
+	--white-trans: #ffffffdf;
+	--primary: #add981;
+	--secondary: #97c767;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	background: var(--white);
+}
+
+h1,
+h2 {
+	margin: 0;
+	font-family: 'Abril', serif;
+	font-weight: 600;
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+
+h2 {
+	font-size: 1.85rem;
+	position: relative;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	display: inline-block;
+}
+
+p {
+	margin: 0;
+	line-height: 1.25;
+}
+
+.fas {
+	color: var(--primary);
+}
+
+header,
+.hero,
+footer {
+	font-weight: 400;
+}
+
+ul {
+	padding: 0;
+	list-style: none;
+}
+
+img {
+	display: block;
+	width: 100%;
+}
+
+.container {
+	width: 85%;
+	margin: 0 auto;
+}
+
+h2::after {
+	content: '';
+	width: 7%;
+	height: 5px;
+	background: var(--primary);
+	position: absolute;
+	bottom: -0.1em;
+	left: 0;
+}
+
+/* Header */
+header {
+	position: absolute;
+	top: 0;
+	z-index: 1;
+	height: 70px;
+}
+
+header .container--logo {
+	padding: 0.75em 1em;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header .container--logo .logo {
+	width: 25%;
+}
+
+header .container--logo .open,
+header .container--dropdown .close {
+	cursor: pointer;
+}
+
+header .container--dropdown {
+	display: none;
+	background: var(--white);
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+header .container--dropdown .close {
+	color: inherit;
+	position: absolute;
+	right: 0;
+	margin: 1em;
+}
+
+nav {
+	padding: 2.5em;
+	font-weight: 500;
+}
+
+ul {
+	padding-left: 0;
+	margin: 0;
+}
+
+nav li + li {
+	margin-top: 3em;
+}
+
+/* Hero */
+.hero {
+	color: var(--white);
+	position: relative;
+}
+
+.hero img {
+	height: 100vh;
+	object-fit: cover;
+	object-position: left;
+}
+
+.hero .container--hero {
+	padding: 1.5em;
+	position: absolute;
+	bottom: 0;
+}
+
+.hero h1 {
+	margin-bottom: 3.5em;
+	width: 50%;
+}
+
+.hero .scroll {
+	font-size: 0.8rem;
+}
+
+header .fas,
+.hero .fas {
+	color: var(--white);
+}
+
+.hero .fas {
+	margin-left: 0.5em;
+}
+
+/* Services */
+.service {
+	padding: 1.5em 0;
+	text-align: center;
+}
+
+.service__description {
+	margin-top: 1em;
+	margin-bottom: 0;
+}
+
+/* Best Sales & Plants */
+#best-sales,
+#plants {
+	padding: 2em 0;
+}
+
+#best-sales .cards,
+#plants .cards {
+	margin-top: 1.5em;
+}
+
+/* card */
+.card {
+	position: relative;
+}
+
+.card + .card {
+	margin-top: 2.5em;
+}
+
+.card__body {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	padding: 1em;
+	background: var(--white-trans);
+
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+.card__desc {
+	order: -1;
+}
+
+.card .read-more {
+	font-size: 0.85rem;
+	font-weight: 500;
+	padding: 0.6em 1.15em;
+
+	color: var(--white);
+	background: var(--primary);
+	border-radius: 2em;
+}
+
+.card .read-more:hover,
+.card .read-more:focus {
+	background: var(--secondary);
+}
+
+.card .price {
+	font-size: 0.85rem;
+	font-weight: 700;
+	color: var(--primary);
+	margin-top: 0.35em;
+}
+
+/* Footer */
+footer {
+	font-size: 0.75rem;
+	font-weight: 600;
+
+	padding: 1.5em 0;
+	text-align: center;
+}
+
+footer p + p {
+	margin-top: 0.75em;
+}
