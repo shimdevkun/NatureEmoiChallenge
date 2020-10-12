@@ -88,6 +88,7 @@ header {
 	position: absolute;
 	top: 0;
 	z-index: 1;
+	width: 100%;
 }
 
 header .container--logo {
@@ -98,7 +99,7 @@ header .container--logo {
 }
 
 header .container--logo .logo {
-	width: 25%;
+	width: 80px;
 }
 
 header .container--logo .open,
@@ -148,18 +149,24 @@ nav li + li {
 }
 
 .hero .container--hero {
-	padding: 1.5em;
 	position: absolute;
-	bottom: 0;
+	top: 0;
+	padding: 1.5em;
+	height: 100%;
+	width: 100%;
 }
 
 .hero h1 {
-	margin-bottom: 3.5em;
+	top: 50%;
 	width: 50%;
+	transform: translateY(-50%);
+	position: absolute;
 }
 
 .hero .scroll {
 	font-size: 0.8rem;
+	position: absolute;
+	bottom: 1.5em;
 }
 
 header .fas,
@@ -256,25 +263,21 @@ footer p + p {
 
 /* Media queries */
 @media (min-width: 600px) {
-  header .container--logo .logo {
-    width: 15%;
-  }
+	header .container--logo .logo {
+		width: 120px;
+	}
 
 	h1 {
-    font-size: 3rem;
-  }
+		font-size: 3rem;
+	}
 
 	h2 {
 		font-size: 2.25rem;
-  }
+	}
 
-  header .container--logo  {
-    padding: 1em 2.5em;
-  }
-  
-  .hero h1 {
-    margin-bottom: 5em;
-  }
+	header .container--logo {
+		padding: 1em 2.5em;
+	}
 
 	#services {
 		padding: 2em 0;
@@ -285,23 +288,188 @@ footer p + p {
 	}
 
 	.cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: start;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		align-items: start;
 		gap: 2em;
-  }
-  
+	}
+
+	#plants .cards {
+		grid-template-columns: none;
+		grid-template-areas:
+			'feature small1'
+			'feature small2'
+			'side1 wide'
+			'side2 empty';
+		align-items: stretch;
+	}
+
+	#plants .cards .card img {
+		height: 100%;
+	}
+
+	#plants .cards .card:first-child {
+		grid-area: feature;
+	}
+
+	#plants .cards .card:nth-child(2) {
+		grid-area: small1;
+	}
+
+	#plants .cards .card:nth-child(3) {
+		grid-area: small2;
+	}
+
+	#plants .cards .card:nth-child(4) {
+		grid-area: side1;
+	}
+
+	#plants .cards .card:nth-child(5) {
+		grid-area: side2;
+	}
+
+	#plants .cards .card:last-child {
+		grid-area: wide;
+	}
+
 	.card + .card {
 		margin-top: 0;
-  }
-  
-  footer {
-    padding: 1.5em 2.5em;
-    display: flex;
-    justify-content: space-between;
-  }
+	}
 
-  footer p + p {
-    margin-top: 0;
-  }
+	footer {
+		padding: 1.5em 2.5em;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	footer p + p {
+		margin-top: 0;
+	}
+}
+
+@media (min-width: 900px) {
+	h1 {
+		font-size: 4rem;
+	}
+
+	h2 {
+		font-size: 3.5rem;
+	}
+
+	header {
+		display: flex;
+		align-items: center;
+		width: 100%;
+	}
+
+	header .container--logo .open,
+	header .container--dropdown .close {
+		display: none;
+	}
+
+	header img {
+		width: 175px;
+	}
+
+	header .container--dropdown {
+		display: block !important;
+		background: none;
+		position: static;
+		width: auto;
+		margin-left: 3em;
+	}
+
+	header .container--dropdown nav ul {
+		display: flex;
+		color: var(--white);
+	}
+
+	nav {
+		padding: 0;
+	}
+
+	nav li + li {
+		margin-top: 0;
+		margin-left: 2em;
+	}
+
+	.hero h1 {
+		width: 35%;
+	}
+
+	.hero br {
+		display: none;
+	}
+
+	#plants .cards {
+		grid-template-columns: none;
+		grid-template-rows: none;
+		grid-template-areas:
+			'feature feature small1'
+			'feature feature small2'
+			'side1 wide side2'
+			'side1 wide side2';
+		align-items: stretch;
+	}
+
+	#plants .cards .card img {
+		object-fit: cover;
+		object-position: center;
+	}
+}
+
+@media (min-width: 1200px) {
+	.hero .container--hero {
+		padding: 2em 4em;
+	}
+
+	.hero h1 {
+		margin-bottom: 3.5em;
+	}
+
+	#services {
+		padding: 3.5em 0;
+	}
+
+	#services .container {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	.service + .service {
+		margin-top: 0;
+	}
+
+	#best-sales {
+		margin-bottom: 5em;
+	}
+
+	#best-sales .cards {
+		display: flex;
+		gap: 0;
+	}
+
+	#plants {
+		margin-bottom: 5em;
+	}
+
+	#plants .cards {
+		grid-template-columns: none;
+		grid-template-rows: none;
+		grid-template-areas:
+			'feature feature small1 small1'
+			'feature feature small2 small2'
+			'side1 wide wide side2'
+			'side1 wide wide side2';
+		align-items: stretch;
+	}
+
+	#plants .cards .card:nth-child(5) {
+		grid-area: wide;
+	}
+
+	#plants .cards .card:last-child {
+		grid-area: side2;
+	}
 }
