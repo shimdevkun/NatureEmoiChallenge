@@ -1,19 +1,27 @@
 # Nature Emoi Challenge
 
-Build a web site from a prototype in 24h
+Build a web site from a mock up in 24h.
 
-See live version [here]()
+> Bonus: Make the site responsive
+
+See live version [here](https://nature-emoi.vercel.app/)
 
 ## Results
 
 ### Desktop Version
 
-![](./images/result_desktop_layout_light.png)
+![](./images/results/desktop.jpg)
 
 ### Tablet Version
 
-![](./images/result_mobile_layout_light.png)
+![](./images/results/tablet.jpg)
 
 ### Mobile Version
 
-![](./images/result_mobile_layout_light.png)
+![](./images/results/mobile.jpg)
+
+## Credit
+
+- Mock up by Baptiste (alias Baptoufou) : https://twitter.com/baptistedph
+
+- Challenge by Graven : https://www.youtube.com/watch?v=eYn-U770_4U
